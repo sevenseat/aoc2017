@@ -38,6 +38,28 @@ test("12131415", () =>
   DayOne.part2("12131415") |> expect |> toBe(4)
 );
 
-test("Day 2", () =>
+test("Day 2 part 1", () =>
   DayTwo.chsum([[5, 1, 9, 5], [7, 5, 3], [2, 4, 6, 8]]) |> expect |> toBe(18)
+);
+
+test("Day 2 part 2 - forward div", () =>
+  DayTwo.chDiv([[3, 6]]) |> expect |> toEqual(Some(2))
+);
+
+test("Day 2 part 2 - backward div", () =>
+  DayTwo.chDiv([[6, 3]]) |> expect |> toEqual(Some(2))
+);
+
+test("Day 2 part 2 - no div", () =>
+  DayTwo.chDiv([[6, 7]]) |> expect |> toEqual(None)
+);
+
+test("Day 2 part 2", () =>
+  DayTwo.chDiv([[5, 9, 2, 8]]) |> expect |> toEqual(Some(4))
+);
+
+test("Day 2 part 2", () =>
+  DayTwo.chDiv([[5, 9, 2, 8], [9, 4, 7, 3], [3, 8, 6, 5]])
+  |> expect
+  |> toEqual(Some(9))
 );

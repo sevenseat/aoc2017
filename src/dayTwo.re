@@ -10,3 +10,33 @@ let chRow = row => {
 
 let chsum = matrix =>
   List.fold_left((sum, row) => sum + chRow(row), 0, matrix);
+
+let rec findDivisor = list => {
+  let rec findHelper = (i, list) =>
+    switch list {
+    | [] => None
+    | [h, ..._t] when h / i * i === h => Some(h / i)
+    | [h, ..._t] when i / h * h === i => Some(i / h)
+    | [_h, ...t] => findHelper(i, t)
+    };
+  switch list {
+  | [] => None
+  | [h, ...t] =>
+    switch (findHelper(h, t)) {
+    | None => findDivisor(t)
+    | Some(div) => Some(div)
+    }
+  };
+};
+
+let chDiv = matrix =>
+  List.fold_left(
+    (sum, row) =>
+      switch (sum, findDivisor(row)) {
+      | (None, _)
+      | (_, None) => None
+      | (Some(sum), Some(div)) => Some(sum + div)
+      },
+    Some(0),
+    matrix
+  );
