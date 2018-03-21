@@ -8,7 +8,7 @@ let chRow = row => {
   snd(minMax) - fst(minMax);
 };
 
-let chsum = matrix =>
+let part1 = matrix =>
   List.fold_left((sum, row) => sum + chRow(row), 0, matrix);
 
 let rec findDivisor = list => {
@@ -29,7 +29,7 @@ let rec findDivisor = list => {
   };
 };
 
-let chDiv = matrix =>
+let part2 = matrix =>
   List.fold_left(
     (sum, row) =>
       switch (sum, findDivisor(row)) {

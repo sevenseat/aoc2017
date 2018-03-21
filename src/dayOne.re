@@ -13,7 +13,7 @@ let rec captchaWorker = (accum, lst) =>
   | [_x, ...rest] => captchaWorker(accum, rest)
   };
 
-let captcha = s =>
+let part1 = s =>
   [charToInt(s.[String.length(s) - 1]), ...explode(s)] |> captchaWorker(0);
 
 let split = (list, n) => {
