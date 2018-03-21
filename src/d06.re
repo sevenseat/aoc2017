@@ -23,15 +23,20 @@ let rebalance = banks => {
   helper(redistPos + 1, toRedist);
 };
 
-let part1 = (banks: array(int)) => {
-  let rec helper = (banks, set, n) => {
+let getCycle = (banks: array(int)) => {
+  let rec helper = (banks, map, n) => {
     /* Oh god this is horrible */
     let hashStr =
       Belt.Array.reduce(banks, "", (acc, cur) =>
         acc ++ string_of_int(cur) ++ ","
       );
-    Belt.Set.String.has(set, hashStr) ?
-      n : helper(rebalance(banks), Belt.Set.String.add(set, hashStr), n + 1);
+    Belt.Map.String.has(map, hashStr) ?
+      (n, n - Belt.Map.String.getExn(map, hashStr)) :
+      helper(rebalance(banks), Belt.Map.String.set(map, hashStr, n), n + 1);
   };
-  helper(banks, Belt.Set.String.empty, 0);
+  helper(banks, Belt.Map.String.empty, 0);
 };
+
+let part1 = banks => banks |> getCycle |> fst;
+
+let part2 = banks => banks |> getCycle |> snd;

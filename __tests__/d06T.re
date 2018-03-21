@@ -26,8 +26,16 @@ test("part1 - test", () =>
   D06.part1([|0, 2, 7, 0|]) |> expect |> toEqual(5)
 );
 
+test("part2 - test", () =>
+  D06.part2([|0, 2, 7, 0|]) |> expect |> toEqual(4)
+);
+
+let testVal = [|14, 0, 15, 12, 11, 11, 3, 5, 1, 6, 8, 4, 9, 1, 8, 4|];
+
 test("part1", () =>
-  D06.part1([|14, 0, 15, 12, 11, 11, 3, 5, 1, 6, 8, 4, 9, 1, 8, 4|])
-  |> expect
-  |> toEqual(5)
+  D06.part1(testVal) |> expect |> toEqual(11137)
+);
+
+test("part2", () =>
+  D06.part2(testVal) |> expect |> toEqual(1037)
 );
