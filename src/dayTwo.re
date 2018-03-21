@@ -3,7 +3,7 @@ let chRow = row => {
     List.fold_left(
       ((cMin, cMax), i) => (min(i, cMin), max(i, cMax)),
       (max_int, min_int),
-      row
+      row,
     );
   snd(minMax) - fst(minMax);
 };
@@ -13,13 +13,13 @@ let chsum = matrix =>
 
 let rec findDivisor = list => {
   let rec findHelper = (i, list) =>
-    switch list {
+    switch (list) {
     | [] => None
     | [h, ..._t] when h / i * i === h => Some(h / i)
     | [h, ..._t] when i / h * h === i => Some(i / h)
     | [_h, ...t] => findHelper(i, t)
     };
-  switch list {
+  switch (list) {
   | [] => None
   | [h, ...t] =>
     switch (findHelper(h, t)) {
@@ -38,5 +38,5 @@ let chDiv = matrix =>
       | (Some(sum), Some(div)) => Some(sum + div)
       },
     Some(0),
-    matrix
+    matrix,
   );

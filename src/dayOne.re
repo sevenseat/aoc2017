@@ -7,7 +7,7 @@ let explode = s => {
 };
 
 let rec captchaWorker = (accum, lst) =>
-  switch lst {
+  switch (lst) {
   | [] => accum
   | [x, y, ...rest] when x === y => captchaWorker(accum + x, [y, ...rest])
   | [_x, ...rest] => captchaWorker(accum, rest)
@@ -35,6 +35,6 @@ let part2 = s => {
     (accum, i1, i2) => i1 === i2 ? accum + i1 + i2 : accum,
     0,
     fst(spList),
-    snd(spList)
+    snd(spList),
   );
 };
