@@ -5,15 +5,15 @@ open Expect;
 let u = a => a;
 
 test("aa bb cc dd ee", () =>
-  DayFour.isValid(u, "aa bb cc dd ee") |> expect |> toBe(true)
+  D04.isValid(u, "aa bb cc dd ee") |> expect |> toBe(true)
 );
 
 test("aa bb cc dd aa", () =>
-  DayFour.isValid(u, "aa bb cc dd aa") |> expect |> toBe(false)
+  D04.isValid(u, "aa bb cc dd aa") |> expect |> toBe(false)
 );
 
 test("aa bb cc dd aaa", () =>
-  DayFour.isValid(u, "aa bb cc dd aaa") |> expect |> toBe(true)
+  D04.isValid(u, "aa bb cc dd aaa") |> expect |> toBe(true)
 );
 
 let testData = [
@@ -532,41 +532,35 @@ let testData = [
 ];
 
 test("part1", () =>
-  DayFour.part1(testData) |> expect |> toBe(451)
+  D04.part1(testData) |> expect |> toBe(451)
 );
 
 test("sortWord", () =>
-  DayFour.sortWord("dcab") |> expect |> toBe("abcd")
+  D04.sortWord("dcab") |> expect |> toBe("abcd")
 );
 
 test("abcde fghij", () =>
-  DayFour.isValid(DayFour.sortWord, "abcde fghij") |> expect |> toBe(true)
+  D04.isValid(D04.sortWord, "abcde fghij") |> expect |> toBe(true)
 );
 
 test("abcde xyz ecdab", () =>
-  DayFour.isValid(DayFour.sortWord, "abcde xyz ecdab")
-  |> expect
-  |> toBe(false)
+  D04.isValid(D04.sortWord, "abcde xyz ecdab") |> expect |> toBe(false)
 );
 
 test("a ab abc abd abf abj", () =>
-  DayFour.isValid(DayFour.sortWord, "a ab abc abd abf abj")
-  |> expect
-  |> toBe(true)
+  D04.isValid(D04.sortWord, "a ab abc abd abf abj") |> expect |> toBe(true)
 );
 
 test("iiii oiii ooii oooi oooo", () =>
-  DayFour.isValid(DayFour.sortWord, "iiii oiii ooii oooi oooo")
+  D04.isValid(D04.sortWord, "iiii oiii ooii oooi oooo")
   |> expect
   |> toBe(true)
 );
 
 test("oiii ioii iioi iiio", () =>
-  DayFour.isValid(DayFour.sortWord, "oiii ioii iioi iiio")
-  |> expect
-  |> toBe(false)
+  D04.isValid(D04.sortWord, "oiii ioii iioi iiio") |> expect |> toBe(false)
 );
 
 test("part2", () =>
-  DayFour.part2(testData) |> expect |> toBe(223)
+  D04.part2(testData) |> expect |> toBe(223)
 );

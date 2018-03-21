@@ -3,29 +3,27 @@ open Jest;
 open Expect;
 
 test("Day 2 part 1", () =>
-  DayTwo.part1([[5, 1, 9, 5], [7, 5, 3], [2, 4, 6, 8]])
-  |> expect
-  |> toBe(18)
+  D02.part1([[5, 1, 9, 5], [7, 5, 3], [2, 4, 6, 8]]) |> expect |> toBe(18)
 );
 
 test("Day 2 part 2 - forward div", () =>
-  DayTwo.part2([[3, 6]]) |> expect |> toEqual(Some(2))
+  D02.part2([[3, 6]]) |> expect |> toEqual(Some(2))
 );
 
 test("Day 2 part 2 - backward div", () =>
-  DayTwo.part2([[6, 3]]) |> expect |> toEqual(Some(2))
+  D02.part2([[6, 3]]) |> expect |> toEqual(Some(2))
 );
 
 test("Day 2 part 2 - no div", () =>
-  DayTwo.part2([[6, 7]]) |> expect |> toEqual(None)
+  D02.part2([[6, 7]]) |> expect |> toEqual(None)
 );
 
 test("Day 2 part 2", () =>
-  DayTwo.part2([[5, 9, 2, 8]]) |> expect |> toEqual(Some(4))
+  D02.part2([[5, 9, 2, 8]]) |> expect |> toEqual(Some(4))
 );
 
 test("Day 2 part 2", () =>
-  DayTwo.part2([[5, 9, 2, 8], [9, 4, 7, 3], [3, 8, 6, 5]])
+  D02.part2([[5, 9, 2, 8], [9, 4, 7, 3], [3, 8, 6, 5]])
   |> expect
   |> toEqual(Some(9))
 );
@@ -305,9 +303,9 @@ let day2 = [
 ];
 
 test("2.1", () =>
-  DayTwo.part1(day2) |> expect |> toBe(47623)
+  D02.part1(day2) |> expect |> toBe(47623)
 );
 
 test("2.2", () =>
-  DayTwo.part2(day2) |> expect |> toEqual(Some(312))
+  D02.part2(day2) |> expect |> toEqual(Some(312))
 );

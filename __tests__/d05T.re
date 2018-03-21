@@ -3,7 +3,7 @@ open Jest;
 open Expect;
 
 test("part1: 0, 3, 0, 1, -3", () =>
-  DayFive.part1([|0, 3, 0, 1, (-3)|]) |> expect |> toBe(5)
+  D05.part1([|0, 3, 0, 1, (-3)|]) |> expect |> toBe(5)
 );
 
 let testInput = [|
@@ -1084,13 +1084,13 @@ let testInput = [|
 |];
 
 test("part1", () =>
-  DayFive.part1(Array.copy(testInput)) |> expect |> toBe(364539)
+  D05.part1(Array.copy(testInput)) |> expect |> toBe(364539)
 );
 
 test("part2: 0, 3, 0, 1, -3", () =>
-  DayFive.part2([|0, 3, 0, 1, (-3)|]) |> expect |> toBe(10)
+  D05.part2([|0, 3, 0, 1, (-3)|]) |> expect |> toBe(10)
 );
 
 test("part2", () =>
-  DayFive.part2(Array.copy(testInput)) |> expect |> toBe(27477714)
+  D05.part2(Array.copy(testInput)) |> expect |> toBe(27477714)
 );
