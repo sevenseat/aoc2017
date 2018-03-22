@@ -1,11 +1,3 @@
-let charToInt = ch => Char.code(ch) - Char.code('0');
-
-let explode = s => {
-  let rec exp = (i, list) =>
-    i < 0 ? list : exp(i - 1, [charToInt(s.[i]), ...list]);
-  exp(String.length(s) - 1, []);
-};
-
 let rec captchaWorker = (accum, lst) =>
   switch (lst) {
   | [] => accum
@@ -14,7 +6,8 @@ let rec captchaWorker = (accum, lst) =>
   };
 
 let part1 = s =>
-  [charToInt(s.[String.length(s) - 1]), ...explode(s)] |> captchaWorker(0);
+  [Util.charToInt(s.[String.length(s) - 1]), ...Util.explode(s)]
+  |> captchaWorker(0);
 
 let split = (list, n) => {
   let rec aux = (i, acc) =>
@@ -30,7 +23,7 @@ let split = (list, n) => {
 };
 
 let part2 = s => {
-  let spList = split(explode(s), String.length(s) / 2);
+  let spList = split(Util.explode(s), String.length(s) / 2);
   List.fold_left2(
     (accum, i1, i2) => i1 === i2 ? accum + i1 + i2 : accum,
     0,
