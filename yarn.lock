@@ -385,10 +385,6 @@ bs-jest@^0.3.2:
   dependencies:
     jest "^22.0.4"
 
-bs-platform@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-2.1.0.tgz#63560ff8f7142c9c0631559df1c35590b9f6d8b2"
-
 bser@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/bser/-/bser-2.0.0.tgz#9ac78d3ed5d915804fd87acb158bc797147a1719"
@@ -2111,6 +2107,10 @@ realpath-native@^1.0.0:
   resolved "https://registry.yarnpkg.com/realpath-native/-/realpath-native-1.0.0.tgz#7885721a83b43bd5327609f0ddecb2482305fdf0"
   dependencies:
     util.promisify "^1.0.0"
+
+reason-cli@^3.1.0-darwin:
+  version "3.1.0-darwin"
+  resolved "https://registry.yarnpkg.com/reason-cli/-/reason-cli-3.1.0-darwin.tgz#88c32e6599f40a9fa94db29f9f182a37bff657d4"
 
 regenerator-runtime@^0.11.0:
   version "0.11.1"
